@@ -71,22 +71,22 @@ function Conversation({ currentUser,changeChat,changeModePage }) {
     }
 
     try {
-      if(searchValue !== '') {
-      const users = await axios.get(getUsers,value);
+      if (searchValue !== '') {
+        const users = await axios.get(`${getUsers}?username=${searchValue}`);
         setContacts((prevs) => {
           const prevItems = prevs.map(contact => contact.username.toLowerCase());
           const newItems = users.data.filter((user) => {
-            if(user.username.toLowerCase() !== currentUser.username.toLowerCase()) {
-              return !prevItems.includes(user.username.toLowerCase())
+            if (user.username.toLowerCase() !== currentUser.username.toLowerCase()) {
+              return !prevItems.includes(user.username.toLowerCase());
             }
-          })
-
-          return [...prevs,...newItems]
+          });
+    
+          return [...prevs, ...newItems];
         });
       }
-    } catch(err) {
-      console.log(err)
-    };
+    } catch (err) {
+      console.log(err);
+    }
 };
 
 const changeSend = (evt) => {
