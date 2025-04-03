@@ -1,0 +1,103 @@
+
+.UserItem {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+body.dark-mode .UserItem.selected {
+    background: #5a5a5a;
+}
+
+body.dark-mode .UserItem:hover {
+    background: #5a5a5a;
+}
+
+.UserItem.selected {
+    background: #d2d2d2;
+}
+
+.UserItem:hover {
+    background: #d2d2d2;
+}
+
+.styleSpan {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.userImage {
+    margin: auto 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.SecondSpan {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body.dark-mode .username {
+    color: white;
+}
+
+.username {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto 0;
+}
+
+body.dark-mode .lastMessage {
+    color: white;
+}
+
+.lastMessage {
+    width: 100%;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: black;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 500px) {
+    .UserItem {
+        height: 70px;
+    }
+
+    .styleSpan {
+        margin-left: 20px;
+    }
+
+    .userImage {
+        width: 37px;
+        height: 37px;
+    }
+
+    .username {
+        font-size: 15px;
+    }
+
+    .lastMessage {
+        font-size: 14px;
+    }
+
+    .UserItem.selected {
+        background: transparent;
+    }
+    
+    .UserItem:hover {
+        background: transparent;
+    }
+}

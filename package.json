@@ -1,0 +1,14 @@
+{
+  "name": "speakeasy",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000s\u0000p\u0000e\u0000a\u0000k\u0000e\u0000a\u0000s\u0000y\u00001\u00001\u0000\r\u0000 \u0000#\u0000 \u0000c\u0000h\u0000a\u0000t\u0000-\u0000a\u0000p\u0000p\u00001\u00001\u0000\r\u0000 \u0000#\u0000 \u0000c\u0000h\u0000a\u0000t\u0000-\u0000a\u0000p\u0000p\u00001\u00001\u0000\r\u0000 \u0000#\u0000 \u0000c\u0000h\u0000a\u0000t\u0000-\u0000a\u0000p\u0000p\u00001\u00001\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
