@@ -72,7 +72,7 @@ function Conversation({ currentUser,changeChat,changeModePage }) {
 
     try {
       if(searchValue !== '') {
-      const users = await axios.get(`${getUsers}?username=${value}`);
+      const users = await axios.get(getUsers,value);
         setContacts((prevs) => {
           const prevItems = prevs.map(contact => contact.username.toLowerCase());
           const newItems = users.data.filter((user) => {

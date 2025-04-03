@@ -51,7 +51,7 @@ export const login = async (req, res, next) => {
 };
 
 export const getAllUsers = async (req, res, next) => {
-    const { username } = req.query;
+    const { username } = req.body;
 
     try {
         const users = await User.find({
