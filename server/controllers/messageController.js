@@ -1,36 +1,38 @@
-const Message = require('../models/messageModel');
+// controllers/messageController.js
+import Message from '../models/messageModel.js';  // import the model
 
-module.exports.addMessage = async(req,res,next) => {
-    const { from,to,message } = req.body;
+export const addMessage = async (req, res, next) => {
+    const { from, to, message } = req.body;
 
     try {
         await Message.create({
             message: message,
-            users: [from,to],
+            users: [from, to],
             sender: from
-        })
-    } catch(err) {
-        next(err)
+        });
+        return res.status(200).send("Message added successfully!");
+    } catch (err) {
+        next(err);
     }
 };
 
-module.exports.getMessage = async(req,res,next) => {
-    const { sender,receiver } = req.body;
+export const getMessage = async (req, res, next) => {
+    const { sender, receiver } = req.body;
 
     try {
         const users = await Message.find({
-            users: { $all: [sender,receiver]}
+            users: { $all: [sender, receiver] }
         });
-    
+
         const messages = users.map(user => {
             return {
                 fromSelf: user.sender === sender ? true : false,
                 message: user.message,
             };
         });
-    
-        return res.json({messages})
-    } catch(err) {
-        next(err)
+
+        return res.json({ messages });
+    } catch (err) {
+        next(err);
     }
-}
+};

@@ -1,8 +1,10 @@
-const router = require('express').Router();
-const { register,login,getAllUsers } = require('../controllers/signController')
+import express from 'express';
+import { register, login, getAllUsers } from '../controllers/signController.js';
+
+const router = express.Router();
 
 router.post('/register', register);
 router.post('/login', login);
-router.get('/users', getAllUsers)
+router.get('/users', getAllUsers);
 
-module.exports = router;
+export default router;
