@@ -26,7 +26,7 @@ function Conversation({ currentUser,changeChat,changeModePage }) {
     if(currentUser) {
       setUsername(currentUser.username.charAt(0).toUpperCase() + currentUser.username.slice(1))
     }
-  });
+  },[currentUser]);
 
   useEffect(() => {
     if(localStorage.getItem('loaded')) {
@@ -34,7 +34,7 @@ function Conversation({ currentUser,changeChat,changeModePage }) {
     } else {
       navigate('/login')
     }
-  }, []);
+  }, [navigate]);
   
   useEffect(() => {
     const menuBtn = document.querySelector('#menuBurgerDiv');
